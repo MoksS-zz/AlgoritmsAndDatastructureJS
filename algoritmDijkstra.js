@@ -1,3 +1,4 @@
+"use strict";
 const graph = {};
 graph['start'] = {};
 graph['start']['a'] = 6;
