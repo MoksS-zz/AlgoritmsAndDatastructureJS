@@ -1,3 +1,4 @@
+"use strict";
 Array.prototype.generateNumber = function(n){
   for(let i = 0;i < n;i++){
     this.push(Math.floor(Math.random() * 999) +1)
