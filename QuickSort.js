@@ -1,3 +1,4 @@
+"use strict";
 var quick_sort = function(array){ 
 
     function partition(array, lo, hi){

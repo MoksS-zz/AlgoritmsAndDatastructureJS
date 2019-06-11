@@ -1,3 +1,4 @@
+"use strict";
 var selectionSort = function(array) {
     var temp;
 

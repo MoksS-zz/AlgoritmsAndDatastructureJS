@@ -1,3 +1,4 @@
+"use strict";
 function sortBubble(data) {
     var tmp; 
     const length = data.length;

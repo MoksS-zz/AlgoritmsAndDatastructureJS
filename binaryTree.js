@@ -1,3 +1,5 @@
+"use strict";
+
 // Node class 
 class Node 
 { 
