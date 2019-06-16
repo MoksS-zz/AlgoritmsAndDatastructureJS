@@ -1,3 +1,4 @@
+"use strict";
 function sum(arr,i = 0){
     if(i>arr.length - 1) return 0;
     console.log(i);

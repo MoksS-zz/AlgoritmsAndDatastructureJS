@@ -1,3 +1,4 @@
+"use strict";
 function binSearch (arr,item){
     const low = 0;
     let high = arr.length - 1;
