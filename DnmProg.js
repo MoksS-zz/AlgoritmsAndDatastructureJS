@@ -1,3 +1,5 @@
+'use strict'
+
 function createMatrix (rows, cols) {
     const matrix = new Array(rows)
 
@@ -27,12 +29,13 @@ function substring (a, b) {
             }
         }
     }
-  
+    console.log(`${a} and ${b}
+${arrayToString(cell)}`)
     return a.slice(lastSubIndex - lcs, lastSubIndex)
 }
   
-console.log(substring('vista', 'hish')) // "is"
-console.log(substring('fish', 'hish')) // "ish"
+console.log(substring('vista', 'hish'), '\r\n') // "is"
+console.log(substring('fish', 'hish'), '\r\n') // "ish"
 
 function subsequence (a, b) {
     const cell = createMatrix(a.length + 1, b.length + 1)
@@ -46,9 +49,18 @@ function subsequence (a, b) {
             }
         }
     }
-  
+    console.log(`${a} and ${b}
+${arrayToString(cell)}`)
     return cell[a.length][b.length]
 }
 
-console.log(subsequence('fish', 'fosh')) // 3
-console.log(subsequence('fort', 'fosh')) // 2
+console.log(subsequence('fish', 'fosh'), '\r\n') // 3
+console.log(subsequence('fort', 'fosh'), '\r\n') // 2
+
+function arrayToString (arr) {
+    let str = ''
+    for (let i = 0; i < arr.length; i++) {
+        str = str + arr[i].join(' ') + '\r\n' 
+    }
+    return str  
+}
