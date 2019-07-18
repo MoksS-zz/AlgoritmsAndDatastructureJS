@@ -16,5 +16,18 @@ var selectionSort = function(array) {
     }
     return array;
 };
+Array.prototype.generateNumber = function(n){
+    for(let i = 0;i < n;i++){
+      this.push(Math.floor(Math.random() * 999) +1)
+    }
+};
 
-console.log(selectionSort([5,4,3,6,3,20]));
+const arr = [];
+arr.generateNumber(1000000);
+  
+  
+console.time('select_sort');
+selectionSort(arr);
+console.timeEnd('select_sort');
+
+

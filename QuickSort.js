@@ -37,9 +37,9 @@ Array.prototype.generateNumber = function(n){
 
 
 const arr = [];
-arr.generateNumber(1000000);
+arr.generateNumber(10000000);
 const arr1 = [];
-arr1.generateNumber(1000000);
+arr1.generateNumber(10000000);
 
 
 console.time('quick_sort');
