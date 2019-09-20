@@ -9,7 +9,7 @@ class Base64 {
 	    let chr1, chr2, chr3, enc1, enc2, enc3, enc4;
 	    let i = 0;
 
-		input = Base64.utf8_encode(input);
+		input = this.utf8_encode(input);
 
 		while (i < input.length) {
 
@@ -68,7 +68,7 @@ class Base64 {
 
 		}
 
-		output = Base64.utf8_decode(output);
+		output = this.utf8_decode(output);
 
 		return output;
 
@@ -105,7 +105,7 @@ class Base64 {
 	 static utf8_decode (utftext) {
 		let string = "";
 		let i = 0;
-		let c = c1 = c2 = 0;
+		let {c, c1, c2} = 0;
 
 		while ( i < utftext.length ) {
 
@@ -134,4 +134,6 @@ class Base64 {
 
 };
 
-console.log(Base64.encode("Привет МИР"));
+const code = Base64.encode("Привет МИР");
+console.log(code);
+console.log(Base64.decode(code));
