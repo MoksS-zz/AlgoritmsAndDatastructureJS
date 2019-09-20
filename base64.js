@@ -1,7 +1,7 @@
 class Base64 {
 
 	// private property
-	#keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+	static #keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
 
 	// public method for encoding
 	static encode (input) {
@@ -9,7 +9,7 @@ class Base64 {
 	    let chr1, chr2, chr3, enc1, enc2, enc3, enc4;
 	    let i = 0;
 
-		input = Base64._utf8_encode(input);
+		input = Base64.utf8_encode(input);
 
 		while (i < input.length) {
 
@@ -68,14 +68,14 @@ class Base64 {
 
 		}
 
-		output = Base64._utf8_decode(output);
+		output = Base64.utf8_decode(output);
 
 		return output;
 
 	};
 
 	// private method for UTF-8 encoding
-	#utf8_encode (string) {
+	static utf8_encode (string) {
 		string = string.replace(/\r\n/g,"\n");
 		let utftext = "";
 
@@ -102,7 +102,7 @@ class Base64 {
 	};
 
 	// private method for UTF-8 decoding
-	#utf8_decode (utftext) {
+	 static utf8_decode (utftext) {
 		let string = "";
 		let i = 0;
 		let c = c1 = c2 = 0;
@@ -133,3 +133,5 @@ class Base64 {
 	};
 
 };
+
+console.log(Base64.encode("Привет МИР"));
