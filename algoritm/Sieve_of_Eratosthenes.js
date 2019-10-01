@@ -1,24 +1,21 @@
-let arr = [];
+const num = new Set();
 let i = 0, p = 2;
 
 for (i = 2; i < 100; i++) {
-  arr[i] = true
+  num.add(i);
 }
 
 do {
 
   for (i = 2 * p; i < 100; i += p) {
-    arr[i] = false;
+    num.delete(i);
   }
 
-  
   for (i = p + 1; i < 100; i++) {
-    if (arr[i]) break;
+    if (num.has(i)) break;
   }
 
   p = i;
 } while (p * p < 100); 
 
-arr = arr.map( (e,i) => e === true ? i : false ).filter(e => e !== false);
-
-console.table(arr);
+console.table(num);
