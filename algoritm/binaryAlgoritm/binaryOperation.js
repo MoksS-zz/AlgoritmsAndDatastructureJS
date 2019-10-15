@@ -1,6 +1,8 @@
 //Пересечение массивов
 function intersection(A, B) {
-	const m = A.length, n = B.length, c = 0, C = [];
+    const m = A.length, n = B.length, C = [];
+    let c = 0;
+
 	for (let i = 0; i < m; i++) { 
 		let j = 0, k = 0;
 		while (B[j] !== A[ i ] && j < n) j++;
@@ -15,7 +17,9 @@ intersection ([1,2,3,7,9],[4,5,7,2,1,5]); // На выходе [1,2,7]
 
 //Разность массивов
 function diff(A, B) {
-	const M = A.length, N = B.length, c = 0, C = [];
+    const M = A.length, N = B.length, C = [];
+    let c = 0;
+
 	for (let i = 0; i < M; i++) {
 		let j = 0, k = 0;
 		while (B[j] !== A[ i ] && j < N) j++;
@@ -31,8 +35,7 @@ diff([4,5,7,2,1,5], [1,2,3,7,9]); // На выходе [4,5]
 //Объединение массивов
 function sum(A, B)
 {
-	const M = A.length, N = B.length, count = 0, C = [];
-	C = A;
+    const M = A.length, N = B.length, C = A;
 	count = M;
 	for (let i=0; i<N ;i++) { 
 		let plus = false;
@@ -48,7 +51,9 @@ sum([4,5,7,2,1,5],[1,2,3,7,9]); // На выходе [4,5,7,2,1,5,3,9]
 
 //IV. Симметрическая разность массивов
 function symmetricDiff(A,B){
-	const M = A.length, N = B.length, c = 0, C = [];
+    const M = A.length, N = B.length, C = [];
+    let c = 0;
+
 	for (let i = 0; i < M; i++) {
 		let j = 0, k = 0;
 		while (B[j] !== A[ i ] && j < N) j++;
