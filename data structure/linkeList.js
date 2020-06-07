@@ -116,7 +116,7 @@ console.log(list.get(1));//orange
 
 
 for (const color of list) {
-    console.log(color); 
+    console.log("цвет", color); 
 }
 
    
