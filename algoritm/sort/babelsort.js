@@ -1,23 +1,44 @@
-'use strict'
-const c = 41
-function sortBubble (data) {
-    let tmp
-    const length = data.length
-    for (let i = length - 1; i > 0; i--) {
-        let counter = 0
-        for (let j = 0; j < i - 1; j++) {
-            if (data[j] > data[j + 1]) {
-                tmp = data[j]
-                data[j] = data[j + 1]
-                data[j + 1] = tmp
-                counter++
-            }
-        }
-        if (counter === 0) {
-            break
-        }
-    }
-    return data
+'use strict';
+
+Array.prototype.generateNumber = function (n) {
+  for (let i = 0; i < n; i++) {
+    this.push(Math.floor(Math.random() * 999) + 1);
+  }
 };
-console.log(c)
-console.log(sortBubble([1, 2, 3, 4, 67, 324, 765, 234, 45, 123, 123, 124, 45, 6, 324, 234]))
+
+function sortBubbleVer1(arr) {
+  const length = arr.length;
+  for (let i = length - 1; i > 0; i--) {
+    for (let j = 0; j < i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        const spaw = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = spaw;
+      }
+    }
+  }
+  return arr;
+}
+
+function sortBubbleVer2(arr) {
+  const length = arr.length;
+  let swaped;
+  do {
+    swaped = false;
+    for (let i = 0; i < length - 1; i++) {
+      if (arr[i] > arr[i + 1]) {
+        let swap = arr[i];
+        arr[i] = arr[i + 1];
+        arr[i + 1] = swap;
+        swaped = true;
+      }
+    }
+  } while (swaped);
+
+  return arr;
+}
+
+const arr = [];
+arr.generateNumber(40);
+
+console.table(sortBubbleVer2(arr));
