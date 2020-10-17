@@ -6,14 +6,14 @@ const createMatrix = n => {
   return arr;
 }
 
-const top2 = (row, column, n) => row < n / 2 && row % 2 === 0 && column >= row - 2 && column <= n - row - 1;
+const top = (row, column, n) => row < n / 2 && row % 2 === 0 && column >= row - 2 && column <= n - row - 1;
 const right = (row, column, n) => (n - column) % 2 === 1 && row > n - column - 1 && row <= column;
 const bottom = (row, column, n) => (n - row) % 2 === 1 && column > n - row - 1 && column < row;
 const left = (row, column, n) => column % 2 === 0 && row > column + 1 && row < n - column;
 
 function setNumber(row, column, n) {
   const boolean = (
-    top2(row, column, n) ||
+    top(row, column, n) ||
     right(row, column, n) ||
     bottom(row, column, n) ||
     left(row, column, n)
