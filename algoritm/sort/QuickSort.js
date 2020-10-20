@@ -49,7 +49,7 @@ function partition(arr, low, high) {
   return i + 1;
 }
 
-function quick_sort2(arr, low, high) {
+function quick_sort2(arr, low = 0, high = arr.length -1) {
   if (low < high) {
     const pi = partition(arr, low, high);
     quick_sort2(arr, low, pi - 1);
@@ -67,6 +67,6 @@ console.log(arr);
 console.timeEnd('quick_sort');
 
 console.time('quick_sort2');
-quick_sort2(arr2, 0, arr2.length - 1);
+quick_sort2(arr2);
 console.log(arr2);
 console.timeEnd('quick_sort2');
