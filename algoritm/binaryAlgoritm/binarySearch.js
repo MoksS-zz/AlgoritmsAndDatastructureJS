@@ -1,6 +1,6 @@
 "use strict";
 Array.prototype.binSearch = function (item) {
-    const low = 0;
+    let low = 0;
     let high = this.length - 1;
     let mid,guess;
 
@@ -17,4 +17,4 @@ Array.prototype.binSearch = function (item) {
 
 const list = [1,3, 5, 7, 9];
 
-console.log(list.binSearch(5));
+console.log(list.binSearch(8));
