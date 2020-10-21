@@ -34,39 +34,40 @@ Array.prototype.generateNumber = function (n) {
   }
 };
 
-function partition(arr, low, high) {
+function partition(arr, low, high, str = 'CENTER') {
   let i = low - 1;
   let pivot = arr[high];
 
   for (let j = low; j < high; j++) {
     if (arr[j] < pivot) {
-      i = i + 1;
+      i++;
       [arr[i], arr[j]] = [arr[j], arr[i]];
     }
   }
 
-  [arr[i + 1], arr[high]] = [arr[high], arr[i + 1]];
-  return i + 1;
+  i++;
+  [arr[i], arr[high]] = [arr[high], arr[i]];
+  return i;
 }
 
-function quick_sort2(arr, low = 0, high = arr.length -1) {
+function quick_sort2(arr, low = 0, high = arr.length -1, str) {
   if (low < high) {
-    const pi = partition(arr, low, high);
-    quick_sort2(arr, low, pi - 1);
-    quick_sort2(arr, pi + 1, high);
+    const pi = partition(arr, low, high, str);
+    quick_sort2(arr, low, pi - 1, 'LEFT');
+    quick_sort2(arr, pi + 1, high, 'RIGTH');
   }
 }
-const arr = [];
-arr.generateNumber(100);
-const arr2 = [];
-arr2.generateNumber(100);
 
-console.time('quick_sort');
-quick_sort(arr);
-console.log(arr);
-console.timeEnd('quick_sort');
+const arr2 = [
+  200, 528, 610, 596, 438,
+  778, 608, 416, 628,
+  387, 334
+];
+
+// arr2.generateNumber(10);
 
 console.time('quick_sort2');
+console.log('START', arr2);
 quick_sort2(arr2);
-console.log(arr2);
+console.log('END', arr2);
 console.timeEnd('quick_sort2');
