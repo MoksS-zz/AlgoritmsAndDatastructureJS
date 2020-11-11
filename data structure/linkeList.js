@@ -6,7 +6,7 @@ class LinkedListNode {
 }
 
 class LinkedList {
-    
+
     constructor() {
         this.head = null;
     };
@@ -14,7 +14,7 @@ class LinkedList {
     add(data) {
 
         const newNode = new LinkedListNode(data);
-                
+
         if (this.head === null) {
 
             this.head = newNode;
@@ -25,13 +25,13 @@ class LinkedList {
             while (current.next !== null) {
                 current = current.next;
             };
-          
-            current.next = newNode;            
+
+            current.next = newNode;
         };
     };
 
     get(index) {
-    
+
         if (index > -1) {
 
             let current = this.head;
@@ -40,9 +40,9 @@ class LinkedList {
 
             while ((current !== null) && (i < index)) {
                 current = current.next;
-                i++;          
+                i++;
             };
-            return current !== null ? current.data : undefined; 
+            return current !== null ? current.data : undefined;
 
         } else {
             return undefined;
@@ -50,11 +50,11 @@ class LinkedList {
     };
 
     remove(index) {
-    
+
         if ((this.head === null) || (index < 0)) {
             throw new RangeError(`Index ${index} does not exist in the list.`);
         };
- 
+
         if (index === 0) {
 
             const data = this.head.data;
@@ -90,7 +90,7 @@ class LinkedList {
     };
 
     *values(){//generator js
-        
+
         let current = this.head;
 
         while (current !== null) {
@@ -110,18 +110,18 @@ const list = new LinkedList();
 list.add("red");
 list.add("orange");
 list.add("yellow");
-    
 
-console.log(list.get(1));//orange 
+
+console.log(list.get(1));//orange
 
 
 for (const color of list) {
-    console.log("цвет", color); 
+    console.log("цвет", color);
 }
 
-   
+
 console.log(list.remove(1));  //orange
-    
+
 
 console.log(list.get(1)); //yellow
 

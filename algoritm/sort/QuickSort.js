@@ -34,7 +34,7 @@ Array.prototype.generateNumber = function (n) {
   }
 };
 
-function partition(arr, low, high, str = 'CENTER') {
+function partition(arr, low, high) {
   let i = low - 1;
   let pivot = arr[high];
 
@@ -50,11 +50,11 @@ function partition(arr, low, high, str = 'CENTER') {
   return i;
 }
 
-function quick_sort2(arr, low = 0, high = arr.length -1, str) {
+function quick_sort2(arr, low = 0, high = arr.length -1) {
   if (low < high) {
     const pi = partition(arr, low, high, str);
-    quick_sort2(arr, low, pi - 1, 'LEFT');
-    quick_sort2(arr, pi + 1, high, 'RIGTH');
+    quick_sort2(arr, low, pi - 1);
+    quick_sort2(arr, pi + 1, high);
   }
 }
 

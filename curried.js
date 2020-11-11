@@ -19,9 +19,9 @@ function curry(func) {
 
 function sum3(a,b,c) {
   if (arguments.length >= sum3.length)  return a + b + c;
-  return (...args2) => sum3.call(null, ...arguments, ...args2); 
+  return (...args2) => sum3.call(null, ...arguments, ...args2);
 };
 
-// const currySum = curry(sum);
-// console.log(currySum(1)(7)(3));
-console.log(sum3(5)(5)(5));
+const currySum = curry(a => b => c => a + b + c);
+console.log(currySum(1)(7)(3));
+// console.log(sum3(5)(5)(5));
