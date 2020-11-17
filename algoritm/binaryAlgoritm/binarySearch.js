@@ -5,7 +5,7 @@ Array.prototype.binSearch = function (item) {
     let mid,guess;
 
     while(low <= high){
-    
+
         mid = Math.floor((low + high)/2);
         guess = this[mid]
         if (guess == item) return mid;
