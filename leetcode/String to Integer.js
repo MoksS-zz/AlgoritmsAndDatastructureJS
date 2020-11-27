@@ -51,20 +51,15 @@
 const INT_MIN = -2147483648;
 const INT_MAX = 2147483647;
 
-function isValid(s) {
-    if (/\d/.test(s[0])) return true;
-    if (s[0] === '-' && /\d/.test(s[1])) return true;
-    if (s[0] === '+' && /\d/.test(s[1])) return true;
-    return false;
-}
+const isValid = (s) => /^[+-]?\d/.test(s);
 
 function myAtoi(s) {
-    s = s.trimLeft();
-    if (!isValid(s)) return 0;
-    s = parseInt(s);
+  s = s.trimLeft();
+  if (!isValid(s)) return 0;
+  s = parseInt(s);
 
-    if (s < INT_MIN) return INT_MIN;
-    if (s > INT_MAX) return INT_MAX;
-    return s;
+  if (s < INT_MIN) return INT_MIN;
+  if (s > INT_MAX) return INT_MAX;
+  return s;
 
 };
