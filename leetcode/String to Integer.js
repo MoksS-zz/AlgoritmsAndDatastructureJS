@@ -63,3 +63,12 @@ function myAtoi(s) {
   return s;
 
 };
+
+// ver2
+// function myAtoi(s) {
+//   s = parseInt(s);
+//   if (!s) return 0;
+//   if (s < INT_MIN) return INT_MIN;
+//   if (s > INT_MAX) return INT_MAX;
+//   return s;
+// };
