@@ -3,7 +3,7 @@ function intersection(A, B) {
     const m = A.length, n = B.length, C = [];
     let c = 0;
 
-	for (let i = 0; i < m; i++) { 
+	for (let i = 0; i < m; i++) {
 		let j = 0, k = 0;
 		while (B[j] !== A[ i ] && j < n) j++;
 		while (C[k] !== A[ i ] && k < c) k++;
@@ -37,7 +37,7 @@ function sum(A, B)
 {
     const M = A.length, N = B.length, C = A;
 	count = M;
-	for (let i=0; i<N ;i++) { 
+	for (let i=0; i<N ;i++) {
 		let plus = false;
 		for (let j=0;j<M;j++)
 			if (C[j] == B[i]) {plus = true; break;}
